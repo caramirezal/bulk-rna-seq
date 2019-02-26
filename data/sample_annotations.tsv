@@ -1,0 +1,22 @@
+Muestra	Grado Histopatológico	Genotipo	localización	edad	sexo
+M7	I	WT	Cerebelo	6 a	F
+M8	I	WT	Cerebelo	19 a	F
+M20	I	WT	Cerebelo	7 a 6 m	F
+CM30	I	WT	Cerebro	16 a	M
+CM71	I	WT	Cerebro	15 a	M
+M46	I	WT	Cerebro	16 a 1 m	F
+CM15	II	WT	Cerebro	6 a 0 m	F
+CM39	II	WT	Tallo cerebral	3 a 0 m	M
+CM75	II	WT	Cerebro	15 a 0 m	M
+CM54	III	WT	Cerebro	16 a 0 m	F
+M69 (2)	III	WT	Cerebelo	12 a	F
+M29	III	WT	Cerebelo	14 a	M
+CM8	IV	WT	Cerebro	17 a 0 m	M
+M10	IV	WT	Cerebro	16 a 0 m	F
+M49	IV	IDH1-KO	Cerebro	14 a 0 m	F
+A10-A	Cerebro	WT	Cerebro	13 a	M
+A12-A	Cerebro	WT	Cerebro	New born	M
+M102	Cerebro	WT	Cerebro	12	F
+A12-B	Cerebelo	WT	Cerebelo	New born	M
+M94	Cerebelo	WT	Cerebelo	3 a 1 m	F
+M108	Cerebelo	WT	Cerebelo	5 a 6 m	F
