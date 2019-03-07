@@ -1,0 +1,500 @@
+   70  21/02/19 15:45:32 git commit -m "quality assesment using shortRead R library"
+   71  21/02/19 15:45:38 git push origin master
+   72  21/02/19 15:45:49 git add sc/
+   73  21/02/19 15:46:09 git commit -m "FastQC installation"
+   74  21/02/19 15:46:20 ls
+   75  21/02/19 15:46:26 ls data/
+   76  21/02/19 15:50:53 zless data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz 
+   77  21/02/19 15:52:29 zcat --help
+   78  21/02/19 15:53:55 zcat data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz | head 
+   79  21/02/19 15:54:32 zless data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz | head 
+   80  21/02/19 15:55:22 zless data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz | head > data/reference_genome/Homo_sapiens.GRCh38.cdna.all.slice.fa.gz
+   81  21/02/19 15:56:30 git add data/reference_genome/Homo_sapiens.GRCh38.cdna.all.slice.fa.gz 
+   82  21/02/19 16:00:53 zless data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz | head | gzip > data/reference_genome/Homo_sapiens.GRCh38.cdna.all.slice.fa.gz
+   83  21/02/19 16:01:00 git add data/reference_genome/Homo_sapiens.GRCh38.cdna.all.slice.fa.gz 
+   84  21/02/19 16:01:48 git commit "reference genome downloaded from ensembl"
+   85  21/02/19 16:02:05 git commit -m "reference genome downloaded from ensembl"
+   86  21/02/19 16:06:55 git push origin master
+   87  21/02/19 10:55:57 cd scripts/
+   88  21/02/19 10:55:58 ls
+   89  21/02/19 10:56:04 cd bulk-rna-seq/
+   90  21/02/19 10:56:06 ls
+   91  21/02/19 10:57:15 nano fastq_qc.bash
+   92  21/02/19 11:00:58 ls /Volumes/Untitled/ABRAHAN-106648929/
+   93  21/02/19 11:01:11 ls /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/
+   94  21/02/19 11:02:21 ls -R/Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/
+   95  21/02/19 11:02:36 ls -R /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/
+   96  21/02/19 11:05:31 find /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/ -type f
+   97  21/02/19 11:13:16 fnames=find /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/ -type f 
+   98  21/02/19 11:14:38 fnames=$(find /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/ -type f) 
+   99  21/02/19 11:14:47 echo $fnames
+  100  21/02/19 11:20:21 chmod +x fastq_qc.bash 
+  101  21/02/19 11:20:28 ./fastq_qc.bash 
+  102  21/02/19 11:20:52 ./fastq_qc.bash 
+  103  21/02/19 11:22:00 ./fastq_qc.bash 
+  104  21/02/19 11:30:34 nano fastq_qc.bash 
+  105  21/02/19 11:31:52 ./fastq_qc.bash 
+  106  21/02/19 11:32:08 nano fastq_qc.bash 
+  107  21/02/19 11:32:27 ./fastq_qc.bash 
+  108  21/02/19 11:32:30 nano fastq_qc.bash 
+  109  21/02/19 11:32:48 ./fastq_qc.bash 
+  110  21/02/19 11:33:11 nano fastq_qc.bash 
+  111  21/02/19 11:42:31 mkdir reports/FastQC
+  112  21/02/19 11:42:35 nano fastq_qc.bash 
+  113  21/02/19 11:43:04 ./fastq_qc.bash 
+  114  21/02/19 11:43:13 ./fastq_qc.bash 
+  115  21/02/19 11:43:16 nano fastq_qc.bash 
+  116  21/02/19 11:43:45 ./fastq_qc.bash 
+  117  21/02/19 11:44:09 chmod +x sc/
+  118  21/02/19 11:44:12 ./fastq_qc.bash 
+  119  21/02/19 11:44:25 chmod +x sc/FastQC/
+  120  21/02/19 11:44:27 ./fastq_qc.bash 
+  121  21/02/19 11:44:48 nano fastq_qc.bash 
+  122  21/02/19 11:45:58 export PATH=$PATH:sc/FastQC
+  123  21/02/19 11:47:09 fastqc /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R1_001.fastq.gz -o reports/FastQC/
+  124  21/02/19 11:47:56 chmod +x sc/FastQC/fastqc
+  125  21/02/19 11:47:58 fastqc /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R1_001.fastq.gz -o reports/FastQC/
+  126  21/02/19 11:55:06 ./fastq_qc.bash 
+  127  21/02/19 11:55:36 nano fastq_qc.bash 
+  128  21/02/19 11:55:55 ./fastq_qc.bash 
+  129  21/02/19 16:28:19 cd scripts/bulk-rna-seq/
+  130  21/02/19 16:28:30 ls reports/
+  131  21/02/19 16:28:44 git add reports/FastQC/
+  132  21/02/19 16:29:20 git commit -m "Single quality plots for all samples"
+  133  21/02/19 16:29:31 git push origin master
+  134  21/02/19 16:29:42 exit
+  135  22/02/19 10:04:03 python --version
+  136  22/02/19 10:05:36 pip install -U pip
+  137  22/02/19 10:06:25 sudo easy_install pip
+  138  22/02/19 10:06:45 pip install -U pip
+  139  22/02/19 10:07:21 pip install multiqc
+  140  22/02/19 10:08:08 multiqc
+  141  22/02/19 11:08:40 conda install -c bioconda multiqc
+  142  22/02/19 11:09:11 conda
+  143  22/02/19 11:09:18 conda install -c bioconda multiqc
+  144  22/02/19 11:12:50 chmod +x ~/Downloads/Anaconda2-2018.12-MacOSX-x86_64.sh 
+  145  22/02/19 11:13:01 ./Downloads/Anaconda2-2018.12-MacOSX-x86_64.sh 
+  146  22/02/19 11:17:21 conda install -c bioconda multiqc
+  147  22/02/19 11:18:26 export PATH=$PATH:/Users/abrahan/anaconda2/
+  148  22/02/19 11:18:29 conda install -c bioconda multiqc
+  149  22/02/19 11:18:35 conda
+  150  22/02/19 12:39:28 python --version
+  151  22/02/19 12:40:35 brew install python3
+  152  22/02/19 12:41:24 python --version
+  153  22/02/19 12:42:28 conda
+  154  22/02/19 12:42:58 sudo easy_install pip
+  155  22/02/19 12:43:26 pip install multiqc
+  156  22/02/19 12:44:22 ./Downloads/Anaconda2-2018.12-MacOSX-x86_64.sh 
+  157  22/02/19 12:46:17 export PATH=$PATH:/Users/abrahan/anaconda2/
+  158  22/02/19 12:46:19 conda
+  159  22/02/19 12:58:06 python3
+  160  22/02/19 12:58:51 ls /Users/abrahan/anaconda2/
+  161  22/02/19 12:59:28 python3 --version
+  162  22/02/19 12:59:34 python2 --version
+  163  22/02/19 12:59:38 python --version
+  164  22/02/19 13:00:16 pip install multiqc
+  165  22/02/19 13:02:14 python3 -m venv env
+  166  22/02/19 13:02:20 source ./env/bin/activate
+  167  22/02/19 13:02:52 python -m pip install multiqc
+  168  22/02/19 13:15:48 cd scripts/bulk-rna-seq/
+  169  22/02/19 13:16:13 multiqc --help
+  170  22/02/19 13:20:30 multiqc /Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/ -o reports/
+  171  22/02/19 13:21:05 multiqc reports/FastQC/ -o reports/
+  172  22/02/19 13:31:48 git add reports/
+  173  22/02/19 13:32:26 git commit -m "adding fastqc summary report"
+  174  22/02/19 13:32:37 git push origin master
+  175  22/02/19 13:40:23 ls ~/Desktop/
+  176  22/02/19 13:41:36 wc -l ~/Desktop/RNA-seq\ Expression\ Data.gedata 
+  177  22/02/19 13:41:52 wc -l ~/Desktop/RNA-seq\ Expression\ Data.gesup 
+  178  22/02/19 13:42:22 head ~/Desktop/RNA-seq\ Expression\ Data.gedata 
+  179  22/02/19 13:42:46 head -8 ~/Desktop/RNA-seq\ Expression\ Data.gedata 
+  180  22/02/19 13:43:32 head -10 ~/Desktop/RNA-seq\ Expression\ Data.gedata 
+  181  22/02/19 13:43:51 head -30 ~/Desktop/RNA-seq\ Expression\ Data.gedata 
+  182  22/02/19 13:47:30 exit 
+  183  25/02/19 10:57:30 history | tail
+  184  25/02/19 10:57:51 source ./env/bin/activate
+  185  25/02/19 10:58:32 multiqc --help
+  186  25/02/19 11:05:13 cd scripts/bulk-rna-seq/
+  187  25/02/19 11:05:48 ls /Volumes/Untitled/ABRAHAN-106648929/ 
+  188  25/02/19 11:06:57 ls /Volumes/Untitled/ABRAHAN-106648929/ 
+  189  25/02/19 11:07:33 ls /Volumes/Untitled/ABRAHAN-106648929/ 
+  190  25/02/19 11:07:41 ls /Volumes/Untitled/
+  191  25/02/19 11:08:18 multiqc /Volumes/Untitled/*.bam -o reports/
+  192  25/02/19 11:12:07 nano fastq_qc.bash 
+  193  25/02/19 11:17:09 sc/FastQC/fastqc --help
+  194  25/02/19 11:17:31 nano fastq_qc.bash 
+  195  25/02/19 11:18:55 nano fastq_qc.bash 
+  196  25/02/19 11:19:35 ./fastq_qc.bash 
+  197  25/02/19 11:19:45 nano fastq_qc.bash 
+  198  25/02/19 11:20:20 ./fastq_qc.bash 
+  199  25/02/19 11:20:41 nano fastq_qc.bash 
+  200  25/02/19 11:21:26 ./fastq_qc.bash 
+  201  25/02/19 12:18:35 ls reports/
+  202  25/02/19 12:18:45 nano fastq_qc.bash 
+  203  25/02/19 12:19:24 ls reports/FastQC/
+  204  25/02/19 12:20:07 ls /Volumes/Untitled/ | head
+  205  25/02/19 14:21:43 cd
+  206  25/02/19 14:21:58 ls
+  207  25/02/19 14:22:02 cd scripts/
+  208  25/02/19 14:22:03 ls
+  209  25/02/19 14:22:10 ls networkmodel/
+  210  25/02/19 14:22:54 cd networkmodel/
+  211  25/02/19 14:23:02 head data/carbo_hgnc_symbols.txt 
+  212  25/02/19 14:23:48 head data/carbo_hgnc_symbols.txt 
+  213  25/02/19 14:53:29 mkdir figures
+  214  25/02/19 14:58:19 git add figures/
+  215  25/02/19 14:58:29 git add net_inference.R 
+  216  25/02/19 14:58:55 git commit -m "reactome gene pathway enrichment"
+  217  25/02/19 14:59:04 git push origin master
+  218  25/02/19 14:59:09 cd ..
+  219  25/02/19 14:59:15 cd bulk-rna-seq/
+  220  25/02/19 14:59:20 ls sc/
+  221  25/02/19 14:59:34 git add fastq_qc.bash 
+  222  25/02/19 15:00:10 git add reports/multiqc_*
+  223  25/02/19 15:00:40 git commit -m "multiqc reports from fastqc quality check"
+  224  25/02/19 15:00:46 git push origin master
+  225  25/02/19 15:42:22 cd ..
+  226  25/02/19 15:42:26 cd mamx_model/
+  227  25/02/19 15:42:27 ls
+  228  25/02/19 15:42:51 git add figures/Clustering_aerobic.pdf 
+  229  25/02/19 15:43:39 git add scripts/DNAfit_clustering.R 
+  230  25/02/19 15:44:13 git commit -m "add samples clustering heatmap with DNAfit data"
+  231  25/02/19 15:44:19 git push origin master
+  232  25/02/19 15:44:35 git pull
+  233  25/02/19 15:44:56 rm figures/karyotype.jpeg 
+  234  25/02/19 15:44:58 git pull
+  235  25/02/19 15:48:25 cd scripts/mamx_model/
+  236  25/02/19 15:48:28 git pull
+  237  25/02/19 15:48:56 git commit -m "error"
+  238  25/02/19 15:49:04 git push origin master
+  239  25/02/19 15:49:10 git pull
+  240  25/02/19 15:49:22 git add scripts/DNAfit_clustering.R 
+  241  25/02/19 15:49:45 git commit -m "clustering of variants from DNA fit data"
+  242  25/02/19 15:50:05 git push origin master
+  243  25/02/19 15:50:31 git add figures/Clustering_aerobic.pdf 
+  244  25/02/19 15:51:11 git commit -m "heatmap of variant clustering of DNAfit data"
+  245  25/02/19 15:51:23 git push origin master
+  246  25/02/19 16:05:30 git add scripts/genotype_report_miadnmx_fede.Rmd 
+  247  25/02/19 16:05:48 git commit -m "control de peso y deporte"
+  248  25/02/19 16:05:55 git push origin master
+  249  26/02/19 10:22:49 cd scripts/
+  250  26/02/19 10:22:52 cd bulk-rna-seq/
+  251  26/02/19 10:22:53 ls
+  252  26/02/19 10:23:03 nano fastq_qc.bash 
+  253  26/02/19 10:26:00 history
+  254  26/02/19 10:26:34 source ./env/bin/activate
+  255  26/02/19 10:26:40 cd 
+  256  26/02/19 10:26:42 source ./env/bin/activate
+  257  26/02/19 10:29:56 ls scripts/bulk-rna-seq/reports/FastQC/ | head
+  258  26/02/19 10:32:40 mv scripts/bulk-rna-seq/reports/FastQC/ | grep -v R1 
+  259  26/02/19 10:32:58 ls scripts/bulk-rna-seq/reports/FastQC/ | grep -v R1 
+  260  26/02/19 10:34:41 ls scripts/bulk-rna-seq/reports/FastQC/ | grep -v-E 'R1|R2' 
+  261  26/02/19 10:34:47 ls scripts/bulk-rna-seq/reports/FastQC/ | grep -v -E 'R1|R2' 
+  262  26/02/19 10:36:03 mkdir scripts/bulk-rna-seq/reports/MultiQC
+  263  26/02/19 10:38:51 ls scripts/bulk-rna-seq/reports/FastQC/*[R1|R2]*
+  264  26/02/19 10:40:37 ls scripts/bulk-rna-seq/reports/FastQC/*R1|R2*
+  265  26/02/19 10:41:09 ls scripts/bulk-rna-seq/reports/FastQC/*'R1|R2'*
+  266  26/02/19 10:41:20 ls scripts/bulk-rna-seq/reports/FastQC/*R1*
+  267  26/02/19 10:44:42 ls scripts/bulk-rna-seq/reports/FastQC/*{R1,R2}*
+  268  26/02/19 10:48:19 ls scripts/bulk-rna-seq/reports/FastQC/*{^R1,R2}*
+  269  26/02/19 10:48:33 ls scripts/bulk-rna-seq/reports/FastQC/*{^R1,^R2}*
+  270  26/02/19 10:49:00 ls scripts/bulk-rna-seq/reports/FastQC/*{R1,R2}*
+  271  26/02/19 10:49:09 ls scripts/bulk-rna-seq/reports/FastQC/*^{R1,R2}*
+  272  26/02/19 10:49:20 ls scripts/bulk-rna-seq/reports/FastQC/
+  273  26/02/19 10:50:07 ls scripts/bulk-rna-seq/reports/FastQC/*^{R1,R2}*
+  274  26/02/19 10:50:30 ls scripts/bulk-rna-seq/reports/FastQC/*^R1|R2*
+  275  26/02/19 10:55:57 mv scripts/bulk-rna-seq/
+  276  26/02/19 10:56:04 cd scripts/bulk-rna-seq/
+  277  26/02/19 10:56:05 ls
+  278  26/02/19 10:56:11 cd reports/
+  279  26/02/19 10:56:19 cd FastQC/
+  280  26/02/19 10:56:39 ls *R1|R2*
+  281  26/02/19 10:56:54 ls *{R1|R}2*
+  282  26/02/19 10:56:58 ls *{R1|R2}*
+  283  26/02/19 10:57:13 ls 
+  284  26/02/19 10:57:46 ls *R1*
+  285  26/02/19 11:00:33 ls *R1|R2*
+  286  26/02/19 11:00:52 ls *{R1,R2}*
+  287  26/02/19 11:01:05 mkdir fastqc
+  288  26/02/19 11:01:18 mv *{R1,R2}* fastqc/
+  289  26/02/19 11:01:21 ls
+  290  26/02/19 11:01:52 mv *fastqc* ../MultiQC/
+  291  26/02/19 11:02:10 ls 
+  292  26/02/19 11:02:19 ls
+  293  26/02/19 11:05:32 ls
+  294  26/02/19 11:05:41 cd ..
+  295  26/02/19 11:05:54 multiqc --help
+  296  26/02/19 11:07:02 multiqc MultiQC/ --pdf
+  297  26/02/19 11:08:04 brew install pandoc
+  298  26/02/19 11:08:32 multiqc MultiQC/ --pdf
+  299  26/02/19 11:11:24 mkdir FastQC/fastq
+  300  26/02/19 11:11:45 mv "
+  301  26/02/19 11:12:14 ls {.zip,.html}
+  302  26/02/19 11:12:25 ls {*.zip,*.html}
+  303  26/02/19 11:12:59 ls FastQC/{*.zip,*.html}
+  304  26/02/19 11:13:16 mv FastQC/{*.zip,*.html} FastQC/fastq/
+  305  26/02/19 11:13:34 mkdir FastQC/bam
+  306  26/02/19 11:13:46 ls MultiQC/
+  307  26/02/19 11:14:27 mv MultiQC/*fastqc.* FastQC/bam/
+  308  26/02/19 11:18:07 pandoc swarm-diagramm-descr.md --pdf-engine=xelatex -o scheme.pdf --variable mainfont="Ubuntu Mono"
+  309  26/02/19 14:16:22 mv ~/Downloads/Astrocitomoas\ y\ sus\ clasificaciones\ -\ Sheet1.tsv ~/scripts/bulk-rna-seq/data/sample_annotations.tsv
+  310  26/02/19 14:16:29 cd ..
+  311  26/02/19 14:17:00 ls
+  312  26/02/19 14:17:18 git add data/sample_annotations.tsv 
+  313  26/02/19 14:17:37 git commit -m "sample annotations"
+  314  26/02/19 14:17:44 git push origin master
+  315  26/02/19 15:18:41 cd ../mamx_model/
+  316  26/02/19 15:20:24 git add scripts/genotype_report_miadnmx_*.Rmd 
+  317  26/02/19 15:21:11 git commit -m "finished all universes report"
+  318  26/02/19 15:21:18 git push origin master
+  319  26/02/19 15:23:09 cd ~/scripts/
+  320  26/02/19 15:23:16 git clone https://github.com/caramirezal/vihCohort.git
+  321  26/02/19 15:23:21 cd vihCohort/
+  322  26/02/19 15:23:23 ls
+  323  28/02/19 10:51:29 mv ~/Downloads/TablaCompletaCohorteINER_C08-04_20180810.csv ~/scripts/vihCohort/data/
+  324  28/02/19 12:53:37 cd scripts/vihCohort/
+  325  28/02/19 12:53:44 git add scripts/article_figures.R 
+  326  28/02/19 12:54:02 git commit -m "Change variable names"
+  327  28/02/19 12:54:11 git push origin master
+  328  28/02/19 18:02:27 cd scripts/
+  329  28/02/19 18:02:31 cd bulk-rna-seq/
+  330  28/02/19 18:02:36 git add figures/
+  331  28/02/19 18:03:02 git commit -m "qlucore PCA with colorsor"
+  332  28/02/19 18:03:10 git push origin master
+  333  04/03/19 10:20:20 pip install --user --upgrade cutadapt
+  334  04/03/19 10:21:34 cd scripts/bulk-rna-seq/
+  335  04/03/19 10:21:41 curl -fsSL https://github.com/FelixKrueger/TrimGalore/archive/0.4.5.tar.gz -o trim_galore.tar.gz
+  336  04/03/19 10:22:03 ls
+  337  04/03/19 10:22:08 ls sc
+  338  04/03/19 10:22:48 ls
+  339  04/03/19 10:23:43 mv trim_galore.tar.gz sc/
+  340  04/03/19 10:24:09 ls
+  341  04/03/19 10:24:22 ls sc/
+  342  04/03/19 10:24:51 gzip sc/trim_galore.tar.gz sc/trim_galore
+  343  04/03/19 10:25:10 ls sc
+  344  04/03/19 10:25:22 unzip sc/trim_galore.tar.gz sc/trim_galore
+  345  04/03/19 10:25:40 ls sc
+  346  04/03/19 10:25:56 unzip sc/trim_galore.tar.gz -o  sc/trim_galore
+  347  04/03/19 10:25:59 ls
+  348  04/03/19 10:27:52 tar -xvzf sc/trim_galore.tar.gz -C sc/
+  349  04/03/19 10:27:56 ls sc
+  350  04/03/19 10:28:06 rm sc/trim_galore.tar.gz 
+  351  04/03/19 10:34:35 export export PATH=$PATH:sc/TrimGalore-0.4.5/
+  352  04/03/19 10:35:04 trim_galore --help
+  353  04/03/19 11:24:29 trim_galore /Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R1_001.fastq.gz /Volumes/Untitled\ 1/ABRAHAN-106648929 --fastqc --illumina --quality 26  --paired --output_dir data/
+  354  04/03/19 11:29:26 trim_galore "/Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R1_001.fastq.gz" "/Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R2_001.fastq.gz" --fastqc --illumina --quality 26  --paired --output_dir data/
+  355  04/03/19 11:31:19 export PATH=$PATH:~/.local/bin/cutadapt
+  356  04/03/19 11:31:23 trim_galore "/Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R1_001.fastq.gz" "/Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R2_001.fastq.gz" --fastqc --illumina --quality 26  --paired --output_dir data/
+  357  04/03/19 11:32:14 export PATH=$PATH:~/.local/bin/cutadapt
+  358  04/03/19 11:34:09 trim_galore "/Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R1_001.fastq.gz" "/Volumes/Untitled\ 1/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/A10A_L004-ds.f29a13388bd448af8535b30f9ea0d928/A10A_S16_L004_R2_001.fastq.gz" --fastqc --illumina --quality 26  --paired --output_dir data/ --path_to_cutadapt ~/.local/bin/cutadapt
+  359  04/03/19 13:24:28 export PATH=$PATH: sc/FastQC/
+  360  04/03/19 13:24:32 export PATH=$PATH:sc/FastQC/
+  361  04/03/19 13:25:30 fastqc --help
+  362  04/03/19 13:26:51 fastqc data/*.fq.gz -o data
+  363  04/03/19 13:27:18 fastqc data/*.fq.gz --threads 10 -o data
+  364  04/03/19 14:02:15 ls
+  365  04/03/19 14:02:31 nano fastq_qc.bash 
+  366  04/03/19 14:05:37 nano fastq_qc.bash 
+  367  04/03/19 14:28:57 git add fastq_qc.bash 
+  368  04/03/19 14:29:17 git commit -m "trimming with trim_galore"
+  369  04/03/19 14:29:24 git push origin master
+  370  04/03/19 14:29:38 cd ..
+  371  04/03/19 14:30:31 git clone https://github.com/caramirezal/dataScience.git
+  372  04/03/19 14:30:39 cd dataScience/
+  373  04/03/19 14:30:45 cd bioinformatics/
+  374  04/03/19 14:30:47 ls
+  375  04/03/19 14:31:10 nano essential_linux_commands.bash
+  376  04/03/19 14:35:34 history
+  377  04/03/19 15:32:40 mv ~/Downloads/hisat2-2.0.0-beta-source.zip ~/scripts/bulk-rna-seq/sc/
+  378  04/03/19 15:32:55 unzip --help
+  379  04/03/19 15:33:57 unzip ~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta-source.zip ~/scripts/bulk-rna-seq/sc/
+  380  04/03/19 15:34:11 unzip ~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta-source.zip -d ~/scripts/bulk-rna-seq/sc/
+  381  04/03/19 15:34:25 ls ~/scripts/bulk-rna-seq/sc/
+  382  04/03/19 15:34:46 rm ~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta-source.zip 
+  383  04/03/19 15:36:10 export PATH=$PATH: ~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta
+  384  04/03/19 15:36:26 export PATH=$PATH:~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta
+  385  04/03/19 15:36:35 hisat2 --help
+  386  04/03/19 15:39:54 ls
+  387  04/03/19 15:39:59 cd 
+  388  04/03/19 15:40:02 cd scripts/bulk-rna-seq/
+  389  04/03/19 15:40:04 cd sc/
+  390  04/03/19 15:40:08 cd hisat2-2.0.0-beta/
+  391  04/03/19 15:40:11 make
+  392  04/03/19 15:51:47 ex
+  393  07/03/19 08:44:03 cd scripts/bulk-rna-seq/
+  394  07/03/19 08:44:05 git pull
+  395  07/03/19 08:44:20 git pull
+  396  07/03/19 08:45:54 mkdir data/indexed_ref_genome
+  397  07/03/19 08:46:27 hisat2-build -p 24 -f data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap_
+  398  07/03/19 08:47:05 export PATH=$PATH:sc/hisat2-2.0.0-beta/
+  399  07/03/19 08:47:08 hisat2-build -p 24 -f data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap_
+  400  07/03/19 08:52:00 hisat2-build
+  401  07/03/19 08:54:21 hisat2-build -p 24 data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap
+  402  07/03/19 08:54:37 hisat2-build -p 24 -x data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap
+  403  07/03/19 08:54:56 hisat2-build -p 24 -x data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap
+  404  07/03/19 08:55:48 hisat2-build -p 24 -c data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap
+  405  07/03/19 08:57:11 head data/indexed_ref_genome/homo_sap.1.ht2 
+  406  07/03/19 09:01:29 hisat2-inspect data/indexed_ref_genome/homo_sap. --summary
+  407  07/03/19 09:01:58 hisat2-inspect -c data/indexed_ref_genome/homo_sap. --summary
+  408  07/03/19 09:02:24 hisat2-inspect data/indexed_ref_genome/homo_sap --summary
+  409  07/03/19 09:02:31 hisat2-inspect data/indexed_ref_genome/homo_sap
+  410  07/03/19 09:02:33 hisat2-inspect data/indexed_ref_genome/homo_sap.
+  411  07/03/19 09:02:39 hisat2-inspect data/indexed_ref_genome/
+  412  07/03/19 09:03:25 hisat2-inspect data/indexed_ref_genome/homo_sap
+  413  07/03/19 09:04:10 hisat2-build
+  414  07/03/19 09:04:51 hisat2-build data/indexed_ref_genome/homo_sap
+  415  07/03/19 09:05:01 hisat2-inspect data/indexed_ref_genome/homo_sap
+  416  07/03/19 09:05:27 hisat2-inspect -c data/indexed_ref_genome/homo_sap
+  417  07/03/19 09:05:45 hisat2-inspect -c data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz 
+  418  07/03/19 09:06:51 hisat2-inspect data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz 
+  419  07/03/19 09:07:05 hisat2-inspect data/indexed_ref_genome/homo_sap
+  420  07/03/19 09:08:28 hisat2
+  421  07/03/19 09:08:32 hisat2
+  422  07/03/19 09:09:01 hisat2 --help
+  423  07/03/19 09:09:20 history
+  424  07/03/19 09:10:10 ls sc/hisat2-2.0.0-beta/
+  425  07/03/19 09:17:59 ls sc/
+  426  07/03/19 09:19:34 export PATH=$PATH:~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta
+  427  07/03/19 09:19:42 hisat2 --help
+  428  07/03/19 09:20:17 cd sc/hisat2-2.0.0-beta/
+  429  07/03/19 09:20:24 make
+  430  07/03/19 09:21:01 hisat2 --help
+  431  07/03/19 09:21:11 export PATH=$PATH:~/scripts/bulk-rna-seq/sc/hisat2-2.0.0-beta
+  432  07/03/19 09:21:14 hisat2 --help
+  433  07/03/19 09:26:37 cd ..
+  434  07/03/19 09:26:38 ls
+  435  07/03/19 09:27:00 ls
+  436  07/03/19 09:27:02 cd ..
+  437  07/03/19 09:27:18 wget http://ccb.jhu.edu/software/hisat2/downloads/hisat2-2.0.0-beta-source.zip
+  438  07/03/19 09:27:37 unzip hisat2-2.0.0-beta-source.zip 
+  439  07/03/19 09:27:39 ls
+  440  07/03/19 09:27:58 mv hisat2-2.0.0-beta sc/
+  441  07/03/19 09:28:07 ls sc/
+  442  07/03/19 09:28:17 rm -r sc/hisat2-2.0.0-beta/
+  443  07/03/19 09:28:26 mv hisat2-2.0.0-beta sc/
+  444  07/03/19 09:28:28 ls
+  445  07/03/19 09:28:31 rm hisat2-2.0.0-beta-source.zip 
+  446  07/03/19 09:28:39 cd sc/hisat2-2.0.0-beta/
+  447  07/03/19 09:28:47 make
+  448  07/03/19 09:29:52 ls 
+  449  07/03/19 09:30:15 hisat
+  450  07/03/19 09:30:25 hisat2 --help
+  451  07/03/19 09:38:04 cd ..
+  452  07/03/19 09:38:06 ls
+  453  07/03/19 09:38:08 cd ..
+  454  07/03/19 09:38:13 conda install -c bioconda hisat2
+  455  07/03/19 09:41:21 conda install -c bioconda/label/cf201901 hisat2
+  456  07/03/19 09:42:52 hisat2 --help
+  457  07/03/19 09:43:09 hisat2-align-1 --help
+  458  07/03/19 09:43:35 hisat2-inspect data/indexed_ref_genome/homo_sap
+  459  07/03/19 09:44:25 hisat2-inspect data/indexed_ref_genome/homo_sap --summary > reports/indexing_hisat_summ_report.txt
+  460  07/03/19 09:45:48 hisat2-inspect data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz --summary > reports/indexing_hisat_summ_report.txt
+  461  07/03/19 09:47:39 hisat2-build -p 24 -c data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap
+  462  07/03/19 09:49:21 hisat2-inspect data/indexed_ref_genome/homo_sap --summary > reports/indexing_hisat_summ_report.txt
+  463  07/03/19 09:53:09 hisat2 --help
+  464  07/03/19 10:00:37 hisat2 -x data/indexed_ref_genome/homo_sap -f -1  data/raw_data_example/A10A_S16_L004_R1_001.fastq.gz -2 data/raw_data_example/A10A_S16_L004_R2_001.fastq.gz -S data/alignment.bam -p 24 
+  465  07/03/19 10:01:09 hisat2 --help
+  466  07/03/19 10:03:44 hisat2 -x data/indexed_ref_genome/homo_sap -1  data/raw_data_example/A10A_S16_L004_R1_001.fastq.gz -2 data/raw_data_example/A10A_S16_L004_R2_001.fastq.gz -S data/alignment.bam -p 24 
+  467  07/03/19 10:21:44 hisat2-build -p 24 data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz data/indexed_ref_genome/homo_sap
+  468  07/03/19 10:43:58 hisat2-build --help
+  469  07/03/19 10:46:17 unzip data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz -o data/reference_genome/ 
+  470  07/03/19 10:47:36 gunzip --help
+  471  07/03/19 10:48:47 gunzip -d data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz > data/reference_genome/
+  472  07/03/19 10:49:09 gunzip -d data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa.gz > data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa
+  473  07/03/19 10:49:36 head data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa 
+  474  07/03/19 10:49:55 hisat2-build -p 24 data/reference_genome/Homo_sapiens.GRCh38.cdna.all.fa data/indexed_ref_genome/homo_sap
+  475  07/03/19 11:41:40 hisat2 -x data/indexed_ref_genome/homo_sap -1  data/raw_data_example/A10A_S16_L004_R1_001.fastq.gz -2 data/raw_data_example/A10A_S16_L004_R2_001.fastq.gz -S data/alignment.bam -p 24 
+  476  07/03/19 13:16:31 head data/alignment.sam 
+  477  07/03/19 13:17:28 head -30 data/alignment.sam 
+  478  07/03/19 13:17:52 head -1000 data/alignment.sam 
+  479  07/03/19 13:19:30 more data/alignment.sam 
+  480  07/03/19 13:20:19 grep T data/alignment.sam 
+  481  07/03/19 13:20:43 grep T data/alignment.sam | wc -l
+  482  07/03/19 13:32:44 history 
+  483  07/03/19 13:35:59 ls
+  484  07/03/19 13:36:32 nano pipeline.bash
+  485  07/03/19 13:38:29 nano pipeline.bash
+  486  07/03/19 13:43:20 nano ~/scripts/dataScience/bioinformatics/essential_linux_commands.bash 
+  487  07/03/19 13:44:31 git add pipeline.bash 
+  488  07/03/19 13:45:12 git commit -m "alignment to genome"
+  489  07/03/19 13:45:24 git push origin master
+  490  07/03/19 13:45:33 git pull
+  491  07/03/19 13:49:02 cd scripts/bulk-rna-seq/
+  492  07/03/19 13:49:04 git pull
+  493  07/03/19 13:49:21 git push origin master
+  494  07/03/19 13:51:54 git reset --hard
+  495  07/03/19 13:52:02 git clean -fd
+  496  07/03/19 13:52:16 git add pipeline.bash 
+  497  07/03/19 13:52:39 git commit -m "alignment to reference genome"
+  498  07/03/19 13:52:54 git pull
+  499  07/03/19 13:54:04 cd scripts/bulk-rna-seq/
+  500  07/03/19 13:54:31 rm sc/.Rhistory 
+  501  07/03/19 13:54:40 rm .DS_Store 
+  502  07/03/19 13:54:57 git pull
+  503  07/03/19 13:55:07 git reset --hard
+  504  07/03/19 13:55:15 git clean -fd
+  505  07/03/19 13:55:19 git pull
+  506  07/03/19 13:56:51 git pull
+  507  07/03/19 13:57:07 git reset --hard
+  508  07/03/19 13:57:10 git clean -fd
+  509  07/03/19 13:57:20 git push origin master
+  510  07/03/19 13:58:15 git reset --hard
+  511  07/03/19 13:58:21 git pull
+  512  07/03/19 14:01:07 git commit -m "algo"
+  513  07/03/19 14:01:16 git push origin master
+  514  07/03/19 14:02:36 git add pipeline.bash 
+  515  07/03/19 14:02:55 git commit -m "adding first alignment"
+  516  07/03/19 14:03:05 git push origin master
+  517  07/03/19 14:03:47 git reset --hard
+  518  07/03/19 14:03:58 git clean-fd
+  519  07/03/19 14:04:03 git clean -fd
+  520  07/03/19 14:04:25 git push origin master
+  521  07/03/19 14:04:48 git add
+  522  07/03/19 14:07:47 git status
+  523  07/03/19 14:07:57 git status
+  524  07/03/19 14:10:05 git reset HEAD
+  525  07/03/19 14:10:17 git status
+  526  07/03/19 14:10:37 git log
+  527  07/03/19 14:19:06 git push origin master
+  528  07/03/19 14:19:54 git rm figures/PCA_plot_colors.png 
+  529  07/03/19 14:20:54 git rm figures/PCA_plot_coloured.png
+  530  07/03/19 14:21:04 git push origin master
+  531  07/03/19 14:21:37 git rm figures/PCA_plot_colors.png
+  532  07/03/19 14:23:06 git rm figures/pca_plot_coloured.png
+  533  07/03/19 14:23:09 git push origin master
+  534  07/03/19 14:25:29 git reset --hard
+  535  07/03/19 14:25:35 git clean -nd
+  536  07/03/19 14:25:59 git clean -ndX
+  537  07/03/19 14:26:11 git push origin master
+  538  07/03/19 14:28:57 git filter-branch --tree-filter 'rm -rf figures/PCA_plot_colors.png'
+  539  07/03/19 14:29:12 git filter-branch --tree-filter 'rm -rf figures/PCA_plot_colors.png' HEAD
+  540  07/03/19 14:29:19 git push
+  541  07/03/19 14:29:35 git pull
+  542  07/03/19 14:30:32 git pull --allow-unrelated-histories
+  543  07/03/19 14:30:41 git push
+  544  07/03/19 14:30:58 git pull
+  545  07/03/19 14:32:28 git status
+  546  07/03/19 14:36:36 git pull
+  547  07/03/19 14:43:02 cd ~/
+  548  07/03/19 14:43:10 cd scripts/
+  549  07/03/19 14:43:27 git clone https://github.com/caramirezal/bulk-rna-seq.git
+  550  07/03/19 14:44:15 rm -r bulk-rna-seq/
+  551  07/03/19 14:45:57 git clone https://github.com/caramirezal/bulk-rna-seq.git
+  552  07/03/19 14:46:15 cd bulk-rna-seq/
+  553  07/03/19 14:47:38 mv ~/ngstools/bulk-rna-seq/fastq_qc.bash 
+  554  07/03/19 14:47:44 mv ~/ngstools/bulk-rna-seq/fastq_qc.bash .
+  555  07/03/19 14:47:46 ls
+  556  07/03/19 14:47:54 git add fastq_qc.bash 
+  557  07/03/19 14:48:22 git commit -m "quality of sequences assessment"
+  558  07/03/19 14:48:36 git push origin master
+  559  07/03/19 14:49:12 mv ~/ngstools/bulk-rna-seq/pipeline.bash .
+  560  07/03/19 14:49:18 git add pipeline.bash
+  561  07/03/19 14:49:43 git commit -m "hisat2 pipeline"
+  562  07/03/19 14:49:49 git push origin master
+  563* 07/03/19 14:51:38 mv ~/Downloads/grch38_snp_tran.tar.gz -C data
+  564  07/03/19 14:52:21 tar --help
+  565  07/03/19 14:53:24 tar -xvzf data/grch38_snp_tran.tar.gz -C data/
+  566  07/03/19 14:54:29 ls data/
+  567  07/03/19 14:54:44 ls data/grch38_snp_tran
+  568  07/03/19 14:59:56 ls
+  569  07/03/19 15:01:21 history > reports/biocelin_log.txt
