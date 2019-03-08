@@ -1,0 +1,120 @@
+[2019-03-08 14:06:37.539] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-03-08 14:06:37.539] [jointLog] [warning] 
+
+NOTE: It appears you are running salmon without the `--validateMappings` option.
+Mapping validation can generally improve both the sensitivity and specificity of mapping,
+with only a moderate increase in use of computational resources. 
+Mapping validation is planned to become a default option (i.e. turned on by default) in
+the next release of salmon.
+Unless there is a specific reason to do this (e.g. testing on clean simulated data),
+`--validateMappings` is generally recommended.
+
+[2019-03-08 14:06:37.539] [jointLog] [info] parsing read library format
+[2019-03-08 14:06:37.539] [jointLog] [warning] Encountered a read file (--mates1/-1) before a library type specification.  The (--libType/-l) option must precede the input files.
+[2019-03-08 14:06:37.539] [jointLog] [error] Failed to successfully parse any complete read libraries. Please make sure you provided arguments properly to -1, -2 (for paired-end libraries) or -r (for single-end libraries), and that the library format option (-l) *comes before* the read libraries.
+[2019-03-08 14:07:43.914] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-03-08 14:07:43.914] [jointLog] [warning] 
+
+NOTE: It appears you are running salmon without the `--validateMappings` option.
+Mapping validation can generally improve both the sensitivity and specificity of mapping,
+with only a moderate increase in use of computational resources. 
+Mapping validation is planned to become a default option (i.e. turned on by default) in
+the next release of salmon.
+Unless there is a specific reason to do this (e.g. testing on clean simulated data),
+`--validateMappings` is generally recommended.
+
+[2019-03-08 14:07:43.914] [jointLog] [info] parsing read library format
+[2019-03-08 14:07:43.914] [jointLog] [warning] Encountered a read file (--mates1/-1) before a library type specification.  The (--libType/-l) option must precede the input files.
+[2019-03-08 14:07:43.914] [jointLog] [error] Failed to successfully parse any complete read libraries. Please make sure you provided arguments properly to -1, -2 (for paired-end libraries) or -r (for single-end libraries), and that the library format option (-l) *comes before* the read libraries.
+[2019-03-08 14:11:06.510] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-03-08 14:11:06.510] [jointLog] [warning] 
+
+NOTE: It appears you are running salmon without the `--validateMappings` option.
+Mapping validation can generally improve both the sensitivity and specificity of mapping,
+with only a moderate increase in use of computational resources. 
+Mapping validation is planned to become a default option (i.e. turned on by default) in
+the next release of salmon.
+Unless there is a specific reason to do this (e.g. testing on clean simulated data),
+`--validateMappings` is generally recommended.
+
+[2019-03-08 14:11:06.510] [jointLog] [info] parsing read library format
+[2019-03-08 14:11:06.510] [jointLog] [info] There is 1 library.
+[2019-03-08 14:11:06.569] [jointLog] [info] Loading Quasi index
+[2019-03-08 14:11:06.569] [jointLog] [info] Loading 32-bit quasi index
+[2019-03-08 14:11:10.124] [jointLog] [info] done
+[2019-03-08 14:11:10.124] [jointLog] [info] Index contained 175,775 targets
+[2019-03-08 14:11:10.541] [jointLog] [info] Automatically detected most likely library type as ISR
+[2019-03-08 14:13:33.563] [fileLog] [info] 
+At end of round 0
+==================
+Observed 50563430 total fragments (50563430 in most recent round)
+
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.12% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 1.96% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.08% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.08% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.18% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.26% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.02% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.08% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.04% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.22% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.04% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.10% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.20% zero probability fragments
+[2019-03-08 14:13:33.253] [jointLog] [info] Thread saw mini-batch with a maximum of 2.16% zero probability fragments
+[2019-03-08 14:13:33.256] [jointLog] [info] Thread saw mini-batch with a maximum of 2.14% zero probability fragments
+[2019-03-08 14:13:33.269] [jointLog] [info] Thread saw mini-batch with a maximum of 2.16% zero probability fragments
+[2019-03-08 14:13:33.279] [jointLog] [info] Thread saw mini-batch with a maximum of 2.04% zero probability fragments
+[2019-03-08 14:13:33.292] [jointLog] [info] Thread saw mini-batch with a maximum of 2.14% zero probability fragments
+[2019-03-08 14:13:33.306] [jointLog] [info] Thread saw mini-batch with a maximum of 2.10% zero probability fragments
+[2019-03-08 14:13:33.317] [jointLog] [info] Thread saw mini-batch with a maximum of 2.00% zero probability fragments
+[2019-03-08 14:13:33.331] [jointLog] [info] Thread saw mini-batch with a maximum of 2.12% zero probability fragments
+[2019-03-08 14:13:33.334] [jointLog] [info] Thread saw mini-batch with a maximum of 2.04% zero probability fragments
+[2019-03-08 14:13:33.344] [jointLog] [info] Thread saw mini-batch with a maximum of 2.14% zero probability fragments
+[2019-03-08 14:13:33.356] [jointLog] [info] Thread saw mini-batch with a maximum of 2.18% zero probability fragments
+[2019-03-08 14:13:33.563] [jointLog] [info] Computed 340,020 rich equivalence classes for further processing
+[2019-03-08 14:13:33.563] [jointLog] [info] Counted 24,380,286 total reads in the equivalence classes 
+[2019-03-08 14:13:33.591] [jointLog] [info] Mapping rate = 48.2172%
+
+[2019-03-08 14:13:33.591] [jointLog] [info] finished quantifyLibrary()
+[2019-03-08 14:13:33.591] [jointLog] [info] Starting optimizer
+[2019-03-08 14:13:33.681] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2019-03-08 14:13:33.686] [jointLog] [info] iteration = 0 | max rel diff. = 6952.47
+[2019-03-08 14:13:34.229] [jointLog] [info] iteration = 100 | max rel diff. = 19.658
+[2019-03-08 14:13:34.760] [jointLog] [info] iteration = 200 | max rel diff. = 11.833
+[2019-03-08 14:13:35.293] [jointLog] [info] iteration = 300 | max rel diff. = 2.23484
+[2019-03-08 14:13:35.826] [jointLog] [info] iteration = 400 | max rel diff. = 3.57005
+[2019-03-08 14:13:36.361] [jointLog] [info] iteration = 500 | max rel diff. = 0.904222
+[2019-03-08 14:13:36.895] [jointLog] [info] iteration = 600 | max rel diff. = 0.201213
+[2019-03-08 14:13:37.427] [jointLog] [info] iteration = 700 | max rel diff. = 1.00361
+[2019-03-08 14:13:37.961] [jointLog] [info] iteration = 800 | max rel diff. = 0.683997
+[2019-03-08 14:13:38.495] [jointLog] [info] iteration = 900 | max rel diff. = 0.0668661
+[2019-03-08 14:13:39.029] [jointLog] [info] iteration = 1,000 | max rel diff. = 2.91401
+[2019-03-08 14:13:39.564] [jointLog] [info] iteration = 1,100 | max rel diff. = 0.15196
+[2019-03-08 14:13:40.097] [jointLog] [info] iteration = 1,200 | max rel diff. = 0.203868
+[2019-03-08 14:13:40.630] [jointLog] [info] iteration = 1,300 | max rel diff. = 1.21737
+[2019-03-08 14:13:41.165] [jointLog] [info] iteration = 1,400 | max rel diff. = 0.0670108
+[2019-03-08 14:13:41.699] [jointLog] [info] iteration = 1,500 | max rel diff. = 0.304473
+[2019-03-08 14:13:42.233] [jointLog] [info] iteration = 1,600 | max rel diff. = 0.13509
+[2019-03-08 14:13:42.767] [jointLog] [info] iteration = 1,700 | max rel diff. = 0.0169535
+[2019-03-08 14:13:43.301] [jointLog] [info] iteration = 1,800 | max rel diff. = 0.131852
+[2019-03-08 14:13:43.835] [jointLog] [info] iteration = 1,900 | max rel diff. = 0.184382
+[2019-03-08 14:13:44.371] [jointLog] [info] iteration = 2,000 | max rel diff. = 0.0613838
+[2019-03-08 14:13:44.714] [jointLog] [info] iteration = 2,065 | max rel diff. = 0.00923437
+[2019-03-08 14:13:44.717] [jointLog] [info] Finished optimizer
+[2019-03-08 14:13:44.717] [jointLog] [info] writing output 
+
+[2019-03-08 15:03:46.858] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-03-08 15:03:46.858] [jointLog] [warning] 
+
+NOTE: It appears you are running salmon without the `--validateMappings` option.
+Mapping validation can generally improve both the sensitivity and specificity of mapping,
+with only a moderate increase in use of computational resources. 
+Mapping validation is planned to become a default option (i.e. turned on by default) in
+the next release of salmon.
+Unless there is a specific reason to do this (e.g. testing on clean simulated data),
+`--validateMappings` is generally recommended.
+
+[2019-03-08 15:03:46.858] [jointLog] [info] parsing read library format
+[2019-03-08 15:03:46.858] [jointLog] [info] There is 1 library.
