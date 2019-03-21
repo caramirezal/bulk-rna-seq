@@ -1,0 +1,35 @@
+## RNA quantification pipeline
+
+## Loading dependencies
+export PATH=$PATH:inst/stringtie/
+export PATH=$PATH:inst/samtools-1.9
+
+## setting directory where fastq are stored
+fastq_dir=/Volumes/Untitled/ABRAHAN-106648929/FASTQ_Generation_2018-12-10_17_23_26Z-142394763/*
+
+## Iteration of the pipeline to process all fastq sample files
+for file in $fastq_dir; do
+	echo "####################################################################################################################"
+
+	## getting sample name
+	samp_name=$(echo $file | sed "s/_L.*//g")
+	samp_name=$(echo $samp_name | sed "s/.*\///g")
+	echo Processin sample: $damp_name
+
+
+	## alignment
+	echo EXECUTING COMMAND: hisat2 -x data/grch38_snp_tran/genome_snp_tran -1 $file/*1_001.fastq.gz -2 $file/*2_001.fastq.gz -S data/sam/hisat2/$samp_name.sam -p 24 --summary-file reports/$samp_name.hisat_alignment_summary_file.txt
+
+	hisat2 -x data/grch38_snp_tran/genome_snp_tran -1 $file/*1_001.fastq.gz -2 $file/*2_001.fastq.gz -S data/sam/hisat2/$samp_name.sam -p 24 --summary-file reports/$samp_name.hisat_alignment_summary_file.txt
+
+
+
+	## sam to bam files
+	echo EXECUTING COMMAND: samtools sort -@ 24 -o data/bam/hisat2/$samp_name.bam data/sam/hisat2/$samp_name.sam
+
+	samtools sort -@ 24 -o data/bam/hisat2/$samp_name.bam data/sam/hisat2/$samp_name.sam
+
+	## Removing sam file
+	rm data/sam/hisat2/$samp_name.sam
+done
+
