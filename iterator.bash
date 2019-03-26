@@ -34,14 +34,27 @@ export PATH=$PATH:inst/samtools-1.9
 #done
 
 bam_dir=data/bam/hisat2/*
+#for bam in $bam_dir; do
+#	echo "####################################################################################################################"
+#	## setting reference name
+#	ref_name=$(echo $bam | sed "s/.*\///g")
+#	ref_name=$(echo $ref_name | sed "s/.bam*//g")
+#	echo Quantifying sample: $ref_name 
+
+	## quantification
+#	echo EXECUTING: stringtie -p 24 -G data/annotations/Homo_sapiens.GRCh38.95.gtf -o data/quant/stringtie/$ref_name.gtf -l $ref_name  $bam
+#	stringtie -p 24 -G data/annotations/Homo_sapiens.GRCh38.95.gtf -o data/quant/stringtie/$ref_name.gtf -l $ref_name  $bam
+#done
+
+#stringtie --merge -p 24 -G data/annotations/Homo_sapiens.GRCh38.95.gtf -o data/quant/all_samples.gtf data/quant/quant_files_list.txt 
+
 for bam in $bam_dir; do
 	echo "####################################################################################################################"
 	## setting reference name
 	ref_name=$(echo $bam | sed "s/.*\///g")
 	ref_name=$(echo $ref_name | sed "s/.bam*//g")
-	echo Quantifying sample: $ref_name 
+	echo Quantifying sample: $ref_name
 
-	## quantification
-	echo EXECUTING: stringtie -p 24 -G data/annotations/Homo_sapiens.GRCh38.95.gtf -o data/quant/stringtie/$ref_name.gtf -l $ref_name  $bam
-	stringtie -p 24 -G data/annotations/Homo_sapiens.GRCh38.95.gtf -o data/quant/stringtie/$ref_name.gtf -l $ref_name  $bam
+       echo EXECUTING: stringtie –e –B -p 24 -G data/quant/all_samples.gtf -o data/quant/ballgown/$ref_name.ballgown.gtf data/bam/hisat2/$ref_name.bam
+       stringtie -e -B -p 24 -G data/quant/all_samples.gtf -o data/quant/ballgown/$ref_name.ballgown.gtf data/bam/hisat2/$ref_name.bam        
 done
