@@ -55,6 +55,6 @@ for bam in $bam_dir; do
 	ref_name=$(echo $ref_name | sed "s/.bam*//g")
 	echo Quantifying sample: $ref_name
 
-       echo EXECUTING: stringtie –e –B -p 24 -G data/quant/all_samples.gtf -o data/quant/ballgown/$ref_name.ballgown.gtf data/bam/hisat2/$ref_name.bam
-       stringtie -e -B -p 24 -G data/quant/all_samples.gtf -o data/quant/ballgown/$ref_name.ballgown.gtf data/bam/hisat2/$ref_name.bam        
+       echo EXECUTING: stringtie -e -B -p 24 -G data/quant/all_samples.gtf -o data/quant/ballgown/cnss$ref_name/cnss$ref_name.gtf data/bam/hisat2/$ref_name.bam
+       stringtie -e -B -p 24 -G data/quant/all_samples.gtf -o data/quant/ballgown/cnss$ref_name/cnss$ref_name.gtf data/bam/hisat2/$ref_name.bam        
 done
