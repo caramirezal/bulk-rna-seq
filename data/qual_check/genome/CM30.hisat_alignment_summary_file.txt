@@ -1,0 +1,15 @@
+44162927 reads; of these:
+  44162927 (100.00%) were paired; of these:
+    6312838 (14.29%) aligned concordantly 0 times
+    33576174 (76.03%) aligned concordantly exactly 1 time
+    4273915 (9.68%) aligned concordantly >1 times
+    ----
+    6312838 pairs aligned concordantly 0 times; of these:
+      310558 (4.92%) aligned discordantly 1 time
+    ----
+    6002280 pairs aligned 0 times concordantly or discordantly; of these:
+      12004560 mates make up the pairs; of these:
+        7391807 (61.57%) aligned 0 times
+        3992711 (33.26%) aligned exactly 1 time
+        620042 (5.17%) aligned >1 times
+91.63% overall alignment rate
