@@ -41,23 +41,30 @@ align_rates.s <- filter(align_rates, align_type!="cdna_n_mtrna") %>%
         mutate(ids=gsub("\\.", "", ids)) %>%
         select(rates:align_type)
 
-## reshape dataframe and calculate stacked values
+## reshape dataframe and calculate unaligned sequences
 align_rates.m <- melt(align_rates.s, id=c("ids", "align_type"))
 align_rates.m <- cast(align_rates.m, ids ~ align_type)
-align_rates.m <- mutate(align_rates.m, 
-                        unalign=100-genome,
-                        genome=genome-cdna-rrna-mtrna)
-align_rates.m$unalign[align_rates.m$genome<0] <- 0 
-align_rates.m$genome[align_rates.m$genome<0] <- 0 
-align_rates.m <- melt(align_rates.m, id="ids")
+align_rates.m <- mutate(align_rates.m, unalign=100-genome) 
 
-align_rates.m$variable <- as.factor(align_rates.m$variable)
-align_rates.m$variable <- factor(align_rates.m$variable, 
-                                 levels=rev(c("cdna", "mtrna", "genome",
+## data processing for stacked barplot of rna alignments
+align_rates.rna <- melt(align_rates.m, id="ids")
+align_rates.rna <- filter(align_rates.rna, variable!="genome")
+align_rates.rna$variable <- as.factor(align_rates.rna$variable)
+align_rates.rna$variable <- factor(align_rates.rna$variable, 
+                                 levels=rev(c("cdna", "mtrna",
                                           "rrna", "unalign")))
 
-                            
-theme_set(theme_classic())
-g <- ggplot(align_rates.m, aes(x=ids, y=value, fill=variable)) +
-        geom_bar(stat = "identity")
+## stacked bar plot
+theme_set(theme_light())
+g <- ggplot(data=align_rates.rna, aes(x=ids, y=value, fill=variable)) +
+            geom_bar(stat = "identity") + 
+            labs(x="", y="% Alignment") +
+            theme(axis.text.x = element_text(face="bold", size = 10),
+                  text = element_text(face="bold", size = 16))
+g <- g + geom_hline(yintercept=mean(align_rates.m$genome), 
+                    linetype="dashed", 
+                    color="black", 
+                    size=1)
+g <- g + geom_text(x=2, y=96, label="Alignment to Genome", size=4, color="steelblue")
 plot(g)
+
