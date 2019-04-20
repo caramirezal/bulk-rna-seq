@@ -46,6 +46,9 @@ align_rates.m <- melt(align_rates.s, id=c("ids", "align_type"))
 align_rates.m <- cast(align_rates.m, ids ~ align_type)
 align_rates.m <- mutate(align_rates.m, unalign=100-genome) 
 
+##################################################################################
+## stacked barplot
+
 ## data processing for stacked barplot of rna alignments
 align_rates.rna <- melt(align_rates.m, id="ids")
 align_rates.rna <- filter(align_rates.rna, variable!="genome")
@@ -55,7 +58,7 @@ align_rates.rna$variable <- factor(align_rates.rna$variable,
                                           "rrna", "unalign")))
 
 ## stacked bar plot
-theme_set(theme_light())
+theme_set(theme_bw())
 g <- ggplot(data=align_rates.rna, aes(x=ids, y=value, fill=variable)) +
             geom_bar(stat = "identity") + 
             labs(x="", y="% Alignment") +
@@ -68,3 +71,21 @@ g <- g + geom_hline(yintercept=mean(align_rates.m$genome),
 g <- g + geom_text(x=2, y=96, label="Alignment to Genome", size=4, color="steelblue")
 plot(g)
 
+#################################################################################
+## paired sample
+
+paired <- filter(align_rates, align_type %in% c("cdna", "cdna_n_mtrna")) %>%
+            filter(ids !="") %>%
+              mutate(ids=gsub("\\.", "", ids)) %>%
+                select(rates:align_type)
+paired <- melt(paired, id=c("ids", "align_type")) 
+paired$align_type <- sapply(paired$align_type, function(x)
+                             ifelse(x=="cdna", x, "cdna + mrna")) 
+
+g <- ggplot(paired, aes(x=align_type, y=value, label=ids)) + 
+        geom_point(colour="steelblue") +
+        geom_text(colour="green") +
+        geom_line(aes(group = ids), colour="steelblue") +
+        labs(x="", y="% Alignment") +
+        theme(text = element_text(face="bold", size = 22))
+plot(g)
