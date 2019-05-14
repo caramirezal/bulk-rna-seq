@@ -1,33 +1,21 @@
-export PATH=$PATH:~/scripts/bulk-rna-seq/inst/seqtk
+#export PATH=$PATH:~/scripts/bulk-rna-seq/inst/seqtk
 
+## path to star
+star_PATH=sc/STAR/bin/MacOSX_x86_64/STAR
 
-## setting directory where fastq are stored
-fastq_dir=$(ls data/qual_check/sample_seqs | grep .fastq | sed "s/_R[12]_001.fastq//g" | uniq )
+fastq_dir=$(ls data/qual_check/sample_seqs/ | sed 's/_R.*//g' | uniq)
 
 ## Alignment to mitochondria
 for file in $fastq_dir; do
-	echo "####################################################################################################################"
+       ## construction of file names
+       f1=$file\_R1_001.fastq
+       f2=$file\_R2_001.fastq
+       fname=$( echo $f1 | sed 's/_.*//g' )
 
+       ## alignment to ribosomal unit      
+       #./$star_PATH --readFilesIn data/qual_check/sample_seqs/$f1 data/qual_check/sample_seqs/$f2 --genomeDir data/star_indexed_ribo/ --runThreadN 16 --outFileNamePrefix data/qual_check/star/$fname-rrna-
 
-	## run alignment to mtrna
-	echo RUNNING: hisat2 -x data/hisat_indexed_mitocondria/homo_sap_mitocon -1 data/qual_check/sample_seqs/${file}_R1_001.fastq -2 data/qual_check/sample_seqs/${file}_R2_001.fastq -S temporal.sam -p 24 --summary-file data/qual_check/mtrna/${file}.hisat_alignment_summary_file.txt
-	hisat2 -x data/hisat_indexed_mitocondria/homo_sap_mitocon -1 data/qual_check/sample_seqs/${file}_R1_001.fastq -2 data/qual_check/sample_seqs/${file}_R2_001.fastq -S temporal.sam -p 24 --summary-file data/qual_check/mtrna/${file}.hisat_alignment_summary_file.txt
-	
-	## removing sam file
-	echo removing sam
-        rm temporal.sam
+       ## alignment to mitochondria
+       ./$star_PATH --readFilesIn data/qual_check/sample_seqs/$f1 data/qual_check/sample_seqs/$f2 --genomeDir data/star_indexed_mit/ --runThreadN 16 --outFileNamePrefix data/qual_check/star/$fname-mtrna-
 done 
 
-
-for file in $fastq_dir; do
-	echo "####################################################################################################################"
-
-
-	## run alignment to rrna
-	echo RUNNING: hisat2 -x data/hisat_indexed_ribosome/homo_sap_ribo -1 data/qual_check/sample_seqs/${file}_R1_001.fastq -2 data/qual_check/sample_seqs/${file}_R2_001.fastq -S temporal.sam -p 24 --summary-file data/qual_check/mtrna/${file}.hisat_alignment_summary_file.txt
-	hisat2 -x data/hisat_indexed_ribosome/homo_sap_ribo -1 data/qual_check/sample_seqs/${file}_R1_001.fastq -2 data/qual_check/sample_seqs/${file}_R2_001.fastq -S temporal.sam -p 24 --summary-file data/qual_check/rrna/${file}.hisat_alignment_summary_file.txt
-	
-	## removing sam file
-	echo removing sam
-        rm temporal.sam
-done 
